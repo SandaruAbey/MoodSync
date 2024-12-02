@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "MoodSync",
+  "version": "1.0",
+  "description": "Personalize YouTube suggestions based on your mood.",
+  "permissions": ["tabs", "storage", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["https://www.youtube.com/*"],
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }
+]
+
+}
